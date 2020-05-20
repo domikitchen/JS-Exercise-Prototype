@@ -96,18 +96,22 @@ function Baby(name, age, favoriteToy) {
   this.favoriteToy = favoriteToy;
 }
 
+const proto = Object.create(Person.prototype);
+Baby.prototype = proto;
+
 Baby.prototype.play = function() {
   return `Playing with ${this.favoriteToy}`;
 }
+
 
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. global binding - this will refer to the window
+  2. implicit binding - this will refer to the object left of the dot
+  3. new binding - this will refer to the object created and returned by the constructor function
+  4. explicit binding - this will refer to another object given to the original object
 */
 
 
